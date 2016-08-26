@@ -4,7 +4,7 @@ How to add a cry?
 * Update your local tree with ``git pull`` or clone the repository with
   ``git clone`` if you don't have it already
 * Add the cry or cries in **www/snd**. See the website FAQ
-  (http://lolicri.es/faq.html) for more information on the format/codec
+  (http://loliscree.ch/faq.html) for more information on the format/codec
   restrictions and extraction.
 * Add a kawaii 300x200 PNG picture in **www/img**
 * Run ``git add`` on the just added sound and images files
@@ -32,15 +32,15 @@ How to change page information or the index page?
 Everything you need is in **gen.py**, just edit it and hack.
 
 
-What is the setup of lolicri.es?
-================================
+What is the setup of loliscree.ch?
+==================================
 
 We have a shared bare repository in
-``GITROOT=/home/$COMMON_GROUP/lolicri.es.git``. This is the repository cloned
+``GITROOT=/home/$COMMON_GROUP/loliscree.ch.git``. This is the repository cloned
 by the developers, *$COMMON_GROUP* being a shared group between them.
 
 A cloned repository (from the *$GITROOT* bare one) is located in
-``WWWROOT=/home/$ADMIN_DEV/lolicri.es``. The *DocumentRoot* of the httpd points
+``WWWROOT=/home/$ADMIN_DEV/loliscree.ch``. The *DocumentRoot* of the httpd points
 on **$WWWROOT/www**. This directory contains all the images, cries, generated
 pages, etc. The web server is also configured to redirect any 404 to
 **www/404.html**.
@@ -52,7 +52,7 @@ the *$WWWROOT* repository::
     #!/bin/sh
 
     ADMIN_DEV=...
-    WWWROOT=/home/$ADMIN_DEV/lolicri.es
+    WWWROOT=/home/$ADMIN_DEV/loliscree.ch
 
     read oldrev newrev refname
     [ "$refname" != "refs/heads/master" ] && exit 0

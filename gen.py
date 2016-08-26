@@ -35,7 +35,7 @@ TPL_BASE_FOOT = '''
  <body>
   <header>
    <hgroup>
-    <h1>Loli Cries!</h1>
+    <h1>Loli screech!</h1>
     %(header)s
    </hgroup>
   </header>
@@ -74,9 +74,9 @@ TPL_RSS = '''<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
   <title>%(title)s</title>
-  <link>http://lolicri.es</link>
+  <link>http://loliscree.ch</link>
   <description>%(title)s</description>
-  <atom:link href="http://lolicri.es/rss.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="http://loliscree.ch/rss.xml" rel="self" type="application/rss+xml" />
   %(content)s
  </channel>
 </rss>
@@ -116,7 +116,7 @@ def rss_content(src, param):
         for l in p['list']:
             l['title'] = 'New wild %s appears: %s' % (p['kind'], l['name'])
             l['guid']  = p['prefix'] + get_loli_anchor(l)
-            l['link']  = 'http://lolicri.es/%s.html' % l['guid']
+            l['link']  = 'http://loliscree.ch/%s.html' % l['guid']
             content += TPL_RSS_ITEM % l
     return content
 
@@ -138,7 +138,7 @@ def page_gen(page, src, dst, param=None):
 
     data = {}
     data['content'] = page.get('func', default_content)(src, param)
-    data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
+    data['title'  ] = 'Loli screech!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['nav'    ] = nav_gen(baseurl, dst)
     data['baseurl'] = baseurl
@@ -165,7 +165,7 @@ def loli_index_gen(page, src, dst, param=None):
     ll.reverse()
 
     data = {}
-    data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
+    data['title'  ] = 'Loli screech!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['baseurl'] = baseurl
 
